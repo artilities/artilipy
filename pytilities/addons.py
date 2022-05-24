@@ -6,7 +6,7 @@ class ClientWithAddOns(Client):
     def __init__(self):
         super().__init__()
 
-    def returnCachedIdeas(self, lang: str = None):
+    def beautifyIdeaCache(self, lang: str = None):
         if lang is not None and lang in ['eng', 'ru']:
             return list(
                 map(lambda idea: idea.json()['generated_idea'][lang], self.__dict__['cached_ideas'][0])
@@ -14,7 +14,7 @@ class ClientWithAddOns(Client):
         else:
             raise langNotSpecified
 
-    def returnCachedChallenges(self, lang: str = None):
+    def beautifyChallengeCache(self, lang: str = None):
         if lang is not None and lang in ['eng', 'ru']:
             return list(
                 map(lambda idea: idea.json()['generated_challenge'][lang], self.__dict__['cached_challenges'][0])
@@ -22,7 +22,7 @@ class ClientWithAddOns(Client):
         else:
             raise langNotSpecified
 
-    def returnedCachedQueries(self, lang: str = None):
+    def beautifyDictCache(self, lang: str = None):
         existing_cached_languages = list(map(lambda el: el[1], self.__dict__['cached_queries']))
         if lang in existing_cached_languages:
             if lang in ['eng', 'ru']:
