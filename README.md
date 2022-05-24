@@ -29,12 +29,12 @@ addon_client = addons.ClientWithAddOns()
 # fill ideas' cache
 _ = [addon_client.generate_idea() for i in range(10)]
 
-# use add-on functionality to beatify cached responses
+# use add-on functionality to beautify cached responses
 print(addon_client.beautifyIdeaCache(lang='ru'))
 ```
 
 ### Read more about the wrapper in the docs:
-https://artilities.github.io/artilipy/
+https://artilities.github.io/artilipy/ (WIP)
 
 ### Explore other open-source projects provided by Artilities team:
 https://github.com/artilities
