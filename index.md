@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/artilities/pytilities/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/artilities/pytilities/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## artilipy: complete documentation (v. 0.0.1)
+---
+### Features:
+- basic client
+- add-on client
+---
+## Basic client [`artilipy.client.Client()`]
+### Attributes:
+* endpoints [primary API endpoints]: dict
+* cached_ideas [pseudo-cache with the history of generated ideas]: `list`
+* cached_challenges [pseudo-cache with the history of generated challenges]: `list`
+* cached_queries [pseudo-cache with the history of dictionary queries]: `list`
+### Methods:
+#### * generate_idea() [get random idea from the generator. The idea is auto-cached in `cached_ideas`] -> (returns) `requests.models.Response`
+#### * generate_challenge() [get random challenge from the generator. The challenge is auto-cached in `cached_challenges`] -> `requests.models.Response`
+#### * get_patrons() [get list of patrons] -> `requests.models.Response`
+#### * get_banner() [get a random banner] -> `requests.models.Response`
+#### * dict_query(query, lang) [perform a search query in the dictionary. Query is auto-cached in `cached_queries`] -> `requests.models.Response`
+> * query [search query]: str, 
+> * lang [search language. 'eng' or 'ru']: str or None (optional)
+---
+## Add-on client [`artilipy.addons.ClientWithAddOns()`]
+This is a subclass of the basic client
+### Methods:
+#### * beautifyIdeaCache(lang) [get a prettified list of `cached_ideas`] -> `list`
+> * lang [search language. 'eng' or 'ru']: str
+#### * beautifyChallengeCache(lang) [get a prettified list of `cached_challenges`] -> `list`
+> * lang [search language. 'eng' or 'ru']: str
+#### * beautifyDictCache(lang) [get a prettified list of `cached_queries`] -> `list`
+> * lang [search language. 'eng' or 'ru']: str
