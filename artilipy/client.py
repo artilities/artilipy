@@ -1,5 +1,5 @@
 from requests import get
-from exceptions import *
+from .exceptions import *
 
 
 class Client:
