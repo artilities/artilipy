@@ -18,23 +18,5 @@ artilities_client = client.Client()
 generated_idea = artilities_client.generate_idea()
 ```
 
-### Add-on client initialisation example:
-
-```python
-from artilipy import addons
-
-# add-on client init
-addon_client = addons.ClientWithAddOns()
-
-# fill ideas' cache
-_ = [addon_client.generate_idea() for i in range(10)]
-
-# use add-on functionality to beatify cached responses
-print(addon_client.beautifyIdeaCache(lang='ru'))
-```
-
-### Read more about the wrapper in the docs:
-https://artilities.github.io/artilipy/
-
 ### Explore other open-source projects provided by Artilities team:
 https://github.com/artilities
