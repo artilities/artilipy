@@ -18,5 +18,7 @@ artilities_client = client.Client()
 generated_idea = artilities_client.generate_idea()
 ```
 
+### You can find more examples on the GitHub page of the package.
+
 ### Explore other open-source projects provided by Artilities team:
 https://github.com/artilities

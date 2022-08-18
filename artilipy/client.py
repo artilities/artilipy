@@ -91,7 +91,6 @@ class Client:
         if query is not None:
             if lang in [None, 'eng', 'ru']:
                 response = get(self.endpoints['dictionary'], params=payload)
-                print(response.json())
                 if len(response.json()['query_results']) > 0:
                     self.append_att('cached_queries', (response, 'eng' if lang is None else lang))
                     return response
